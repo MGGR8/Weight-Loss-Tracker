@@ -1,4 +1,4 @@
-# flutterapps
+# Weight Loss Tracking App
 
 A new Flutter project.
 
