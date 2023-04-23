@@ -28,14 +28,14 @@ class _GraphAreaState extends State<GraphArea>
   late AnimationController _animationController;
 
   List<DataPoint> data = [
-    DataPoint(day: 1, steps: Random().nextInt(100)),
-    DataPoint(day: 2, steps: Random().nextInt(100)),
-    DataPoint(day: 3, steps: Random().nextInt(100)),
-    DataPoint(day: 4, steps: Random().nextInt(100)),
-    DataPoint(day: 5, steps: Random().nextInt(100)),
-    DataPoint(day: 6, steps: Random().nextInt(100)),
-    DataPoint(day: 7, steps: Random().nextInt(100)),
-    DataPoint(day: 8, steps: Random().nextInt(100)),
+    DataPoint(day: 1, steps: 90),
+    DataPoint(day: 2, steps: 89),
+    DataPoint(day: 3, steps: 89.6),
+    DataPoint(day: 4, steps: 88),
+    DataPoint(day: 5, steps: 87),
+    DataPoint(day: 6, steps: 87.6),
+    DataPoint(day: 7, steps: 85),
+    DataPoint(day: 8, steps: 86),
   ];
 
   @override
@@ -111,13 +111,13 @@ class GraphPainter extends CustomPainter {
     Paint linePaint = Paint()
       ..color = const Color(0xff30c3f9)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.0;
+      ..strokeWidth = 4.0;
 
-    Paint shadowPaint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.stroke
-      ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.solid, 3)
-      ..strokeWidth = 3.0;
+    // Paint shadowPaint = Paint()
+    //   ..color = Colors.white
+    //   ..style = PaintingStyle.stroke
+    //   ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.solid, 3)
+    //   ..strokeWidth = 3.0;
 
     Paint fillPaint = Paint()
       ..shader = ui.Gradient.linear(
@@ -162,11 +162,11 @@ class GraphPainter extends CustomPainter {
     fillPath.lineTo(0, size.height);
 
     canvas.drawPath(fillPath, fillPaint);
-    canvas.drawPath(linePath, shadowPaint);
+    // canvas.drawPath(linePath, shadowPaint);
     canvas.drawPath(linePath, linePaint);
 
-    canvas.drawCircle(offsets[4], 15 * _dotSize.value, dotOutlinePaint);
-    canvas.drawCircle(offsets[4], 6 * _dotSize.value, dotCenter);
+  //   canvas.drawCircle(offsets[4], 15 * _dotSize.value, dotOutlinePaint);
+  //   canvas.drawCircle(offsets[4], 6 * _dotSize.value, dotCenter);
   }
 
   @override
@@ -177,7 +177,7 @@ class GraphPainter extends CustomPainter {
 
 class DataPoint {
   final int day;
-  final int steps;
+  final num steps;
 
   DataPoint({
     required this.day,

@@ -24,7 +24,7 @@ class BottomNavigation extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(Icons.add_chart),
-            Icon(Icons.search),
+            // Icon(Icons.search),
 
             Transform.translate(
               offset: Offset(0, -17),
@@ -56,7 +56,7 @@ class BottomNavigation extends StatelessWidget {
               ),
             ),
 
-            Icon(Icons.date_range),
+            // Icon(Icons.date_range),
             GestureDetector(
               onTap: () => {
                 Navigator.of(context).pushNamed('/details'),

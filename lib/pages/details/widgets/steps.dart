@@ -1,27 +1,30 @@
-import 'package:flutter/material.dart';
+import 'dart:ffi';
 
-int weight = 70;
+import 'package:flutter/material.dart';
+import 'package:flutterapps/pages/details/widgets/graphs.dart';
+import 'package:flutterapps/widgets/helpers.dart';
+
 class Steps extends StatelessWidget {
   const Steps({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        height: 70,
-        decoration: BoxDecoration(
-          color: Colors.grey.shade100,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 23),
-          child: Text('Current Weight : $weight KG',
-          textAlign: TextAlign.center,
-          style : TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w500
+
+    String weight = randBetween(80, 90).toString();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+      child : Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Weight : $weight kg',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-          ),
-        ),
+        ],
+      ), 
+
     );
   }
 }
