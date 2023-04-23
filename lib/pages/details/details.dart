@@ -19,7 +19,7 @@ class DetailPage extends StatelessWidget {
         children : [
           Dates(),
           Steps(),
-          Graphs(),
+          Graph(),
           // Info(),
           // Stats(),
           BottomNavigation(),
